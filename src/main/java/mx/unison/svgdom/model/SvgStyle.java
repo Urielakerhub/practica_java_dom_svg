@@ -1,17 +1,43 @@
 package mx.unison.svgdom.model;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics2D;
+public class SvgStyle {
+    private String fill;
+    private String stroke;
+    private double strokeWidth;
 
-
-public record SvgStyle(Color fill, Color stroke, float strokeWidth, boolean fillEnabled, boolean strokeEnabled) {
-    public static SvgStyle defaults() {
-        return new SvgStyle(Color.BLACK, null, 1.0f, true, false);
+    public SvgStyle() {
+        this.fill = "none";
+        this.stroke = "black";
+        this.strokeWidth = 1.0;
     }
 
-    public void applyStroke(Graphics2D g) {
-        g.setStroke(new BasicStroke(Math.max(0.1f, strokeWidth), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
-        if (strokeEnabled) g.setColor(stroke);
+    public SvgStyle(String fill, String stroke, double strokeWidth) {
+        this.fill = fill;
+        this.stroke = stroke;
+        this.strokeWidth = strokeWidth;
+    }
+
+    public String getFill() {
+        return fill;
+    }
+
+    public void setFill(String fill) {
+        this.fill = fill;
+    }
+
+    public String getStroke() {
+        return stroke;
+    }
+
+    public void setStroke(String stroke) {
+        this.stroke = stroke;
+    }
+
+    public double getStrokeWidth() {
+        return strokeWidth;
+    }
+
+    public void setStrokeWidth(double strokeWidth) {
+        this.strokeWidth = strokeWidth;
     }
 }
