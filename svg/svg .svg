@@ -1,0 +1,25 @@
+<svg width="600" height="400">
+    <!-- Lineas -->
+    <line x1="20" y1="20" x2="180" y2="20" stroke="red" stroke-width="3" />
+    <line x1="20" y1="40" x2="180" y2="100" stroke="blue" stroke-width="2" />
+
+    <!-- Circulos -->
+    <circle cx="250" cy="60" r="30" fill="yellow" stroke="black" stroke-width="2" />
+    <circle cx="350" cy="60" r="20" fill="orange" stroke="navy" stroke-width="1" />
+
+    <!-- Polilineas -->
+    <polyline points="20,150 60,120 100,150 140,120" fill="none" stroke="green" stroke-width="3" />
+    <polyline points="180,150 220,120 260,150" fill="lightblue" stroke="black" stroke-width="2" />
+
+    <!-- Rectangulos -->
+    <rect x="300" y="120" width="80" height="50" fill="lightgreen" stroke="green" stroke-width="2" />
+    <rect x="400" y="120" width="60" height="60" fill="none" stroke="purple" stroke-width="4" />
+
+    <!-- Elipses -->
+    <ellipse cx="100" cy="250" rx="60" ry="30" fill="pink" stroke="red" stroke-width="2" />
+    <ellipse cx="250" cy="250" rx="30" ry="50" fill="gray" stroke="black" stroke-width="1" />
+
+    <!-- Textos -->
+    <text x="350" y="240" font-family="Arial" font-size="20" fill="black">Texto SVG 1</text>
+    <text x="350" y="280" font-family="Verdana" font-size="16" fill="blue">Texto SVG 2</text>
+</svg>
