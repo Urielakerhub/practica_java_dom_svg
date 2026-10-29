@@ -1,5 +1,8 @@
 package mx.unison.svgdom.model;
 
+import java.awt.BasicStroke;
+
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class LineFigure extends SvgFigure {
@@ -16,24 +19,13 @@ public class LineFigure extends SvgFigure {
         this.y2 = y2;
     }
 
-    public double getX1() {
-        return x1;
-    }
-
-    public double getY1() {
-        return y1;
-    }
-
-    public double getX2() {
-        return x2;
-    }
-
-    public double getY2() {
-        return y2;
-    }
-
     @Override
     public void draw(Graphics2D g) {
-        g.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
+        Color strokeColor = SvgStyle.parseColor(style.getStroke());
+        if (strokeColor != null) {
+            g.setColor(strokeColor);
+            g.setStroke(new BasicStroke((float) style.getStrokeWidth()));
+            g.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
+        }
     }
 }
