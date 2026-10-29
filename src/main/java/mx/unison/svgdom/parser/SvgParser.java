@@ -83,18 +83,7 @@ public final class SvgParser {
         for(int i=0;i<tokens.length;i+=2) pts.add(new Point2D.Double(number(tokens[i]),number(tokens[i+1])));
         return pts;
     }
-    private static Color parseColor(String value) {
-        String s=value.trim().toLowerCase(Locale.ROOT);
-        if(s.startsWith("#")) {
-            String hex=s.substring(1);
-            if(hex.length()==3) hex=""+hex.charAt(0)+hex.charAt(0)+hex.charAt(1)+hex.charAt(1)+hex.charAt(2)+hex.charAt(2);
-            if(hex.length()==6) return new Color(Integer.parseInt(hex,16));
-            throw new IllegalArgumentException("color hexadecimal inválido: "+value);
-        }
-        return switch(s) {
-            case "black" -> Color.BLACK; case "white" -> Color.WHITE; case "red" -> Color.RED;
-            case "green" -> new Color(0,128,0); case "blue" -> Color.BLUE; case "yellow" -> Color.YELLOW;
-            case "cyan" -> Color.CYAN; case "magenta" -> Color.MAGENTA; case "gray", "grey" -> Color.GRAY;
+    private static Color pata" -> Color.MAGENTA; case "gray", "grey"-> Color.GRAY;
             case "orange" -> Color.ORANGE; case "pink" -> Color.PINK; case "navy" -> new Color(0,0,128);
             case "lightblue" -> new Color(173,216,230); case "lightgreen" -> new Color(144,238,144);
             case "purple" -> new Color(128,0,128); case "brown" -> new Color(165,42,42);
