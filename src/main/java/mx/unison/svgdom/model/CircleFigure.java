@@ -11,4 +11,4 @@ public final class CircleFigure extends SvgFigure {
         if (style.fillEnabled()) { g.setColor(style.fill()); g.fill(shape); }
         if (style.strokeEnabled()) { g.setColor(style.stroke()); style.applyStroke(g); g.draw(shape); }
     }
-}
+}//SVG FIGURA CIRCLE
