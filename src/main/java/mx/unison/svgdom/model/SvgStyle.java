@@ -10,3 +10,8 @@ public record SvgStyle(Color fill, Color stroke, float strokeWidth, boolean fill
         return new SvgStyle(Color.BLACK, null, 1.0f, true, false);
     }
 
+    public void applyStroke(Graphics2D g) {
+        g.setStroke(new BasicStroke(Math.max(0.1f, strokeWidth), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
+        if (strokeEnabled) g.setColor(stroke);
+    }
+}
